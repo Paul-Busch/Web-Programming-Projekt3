@@ -138,6 +138,8 @@ app.delete(API_PREFIX + '/boards/:boardId', (req, res) => {
         }
     }
 
+    boards.slice(findIndexByProperty(boards, "id", boardId), 1);
+
     return res.status(200).json(board);
 });
 
